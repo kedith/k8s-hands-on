@@ -7,7 +7,7 @@ All the resources referenced in the next steps are in the ```k8s-resources``` fo
 ## Steps
 
 1. Create a yaml file for the pod (public [docs](https://kubernetes.io/docs/concepts/workloads/pods/) for inspiration):
-   - Image: sureshkvl/test:1-2
+   - Image: httpd:latest
    - labels - app:hello
    - containerPort: 5000
 2. create a pod using this yaml file (```kubectl apply -f <FILE_NAME>```)

@@ -20,4 +20,4 @@ All the resources referenced in the next steps are in the ```k8s-resources``` fo
    - Use busybox containers to debug the service
      - https://kubernetes.io/docs/tasks/debug/debug-application/debug-service/
    - Use the curl container to access the app and run: ```curl http://hello1/students```
-7. Delete the resources created  (pod, service) 
+7. Delete the resources created  (pod, service) ( ```kubectl delete -f <FILE_NAME>```)

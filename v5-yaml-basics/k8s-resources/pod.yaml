@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello
+  labels:
+    # add your label
+spec:
+  containers:
+    - image: # add image name
+      name: hello1
+      ports:
+       # add the container port

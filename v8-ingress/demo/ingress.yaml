@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-localhost
+  annotations:
+    # indicates that the NGINX Ingress Controller should add a base URL to the request
+    nginx.ingress.kubernetes.io/add-base-url: 'true'
+    # rewrites the target url. ex: rewrite.bar.com/demo rewrites to rewrite.bar.com/
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  # Specifies the Ingress class to use for this Ingress. Here, it's set to nginx, indicating that the NGINX Ingress Controller should handle this Ingress.
+  ingressClassName: nginx
+  rules:
+    - # host: "http://<your-domain.com>"
+      http:
+        paths:
+          - path: /demo
+            pathType: Prefix
+            backend:
+              service:
+                name: demo
+                port:
+                  number: 80

@@ -16,3 +16,4 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 6. Modify the two services of the ```result``` and ```vote``` apps and add two ingresses to access them on you new domain ```cloud.core.com```
 
 
+kubectl create ingress demo-localhost --class=nginx --rule="demo.localdev.me/*=demo:80"

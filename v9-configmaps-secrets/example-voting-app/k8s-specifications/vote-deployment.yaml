@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vote
+  name: vote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote
+  template:
+    metadata:
+      labels:
+        app: vote
+    spec:
+      containers:
+      #V9 second step - change the image name to one which will be generated locally
+      - image: examplevotingapp_vote:local
+        name: vote
+        #V9 third step - set the image pull policy to never. This will make sure that the pod tries to search for the image only locally (not in a remote repo)
+        imagePullPolicy: Never
+        #v9 forth step - add an environment variable which is used in the vote app modified earlier (this overrides the default INFO)
+        env:
+          - name: LOGLEVEL
+            value: "DEBUG"
+        ports:
+        - containerPort: 80
+          name: vote

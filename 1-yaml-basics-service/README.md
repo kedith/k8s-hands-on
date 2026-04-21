@@ -27,7 +27,7 @@ Launch the student app(REST API, 5000 Port) in Pod(Single Instance) and expose t
 Same as before but with a **different service type** (NodePort) and access the app from your browser using
 the node IP and the port assigned by Kubernetes.
 
-![img.png](./img/nodeport.png)
+![nodeport](../img/nodeport.png)
 
 
 ## 3. Hands-on: external access (from outside the cluster, ex. browser)
@@ -40,4 +40,4 @@ and the port assigned by Kubernetes.
 
 Scale the app down to 2 replicas (use kubectl). Check it out (kubectl get pods)
 
-
+![replica](../img/multi-replica.png)
